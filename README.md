@@ -1,38 +1,53 @@
-# Smart Liquidity Hunter - MT4 and MT5
+# Smart Liquidity Hunter — MT4 & MT5
 
-Free open-source MetaTrader 4 and MetaTrader 5 indicator, version 1.11.
+**Free, open-source liquidity-sweep indicator for MetaTrader 4 and MetaTrader 5.** Smart Liquidity Hunter highlights *price-action sweeps* of previously confirmed swing highs and lows on **closed candles**. The algorithm uses OHLC candles, not exchange order-book or broker stop data.
 
-Smart Liquidity Hunter analyzes confirmed swing high and swing low price sweeps on closed candles. It plots bullish and bearish markers and eligible reference levels, with configurable rejection wick, volatility, freshness and candle-direction filters, a small chart dashboard and optional alerts.
+[**Download v1.11 (MT4 + MT5)**](https://github.com/fxliner/smart-liquidity-hunter-mt4-mt5/releases/tag/v1.11) · [**Full indicator guide**](https://forexsignal24.com/smart-liquidity-hunter/) · [**FOREXREVIEW.TOP**](https://forexreview.top/)
 
-**What it does not do:** This is an OHLC price-action proxy, not access to real resting orders, broker stop-loss data or liquidity pools. It does not place trades or guarantee price reversals.
+## What you can analyze
 
-## Latest download
+- **Bullish sweep:** price pierces a previously confirmed swing low by the required distance, then closes above that level.
+- **Bearish sweep:** price pierces a previously confirmed swing high, then closes below the level.
+- **Filters:** swing strength, level freshness, penetration threshold, mean true range, rejection wick, candle close location, and optional candle direction.
+- **Chart output:** sweep arrows, optional reference levels and compact dashboard. Optional popup, sound and push notifications are **off by default**.
+- **No trading automation:** this indicator does not open orders, identify actual stop orders, or guarantee reversals.
 
-Download the complete MT4/MT5 package from [GitHub Releases](https://github.com/fxliner/smart-liquidity-hunter-mt4-mt5/releases/latest). The package includes source code, precompiled indicators, screenshots and the MIT license.
+## See the indicator
 
-## Installation
+![Bullish liquidity-sweep chart](Screenshot_1_Bullish_Sweep.png)
 
-1. Download the latest ZIP from Releases or the SourceForge Files page.
-2. In MetaTrader use File > Open Data Folder.
-3. For MT4, copy the EX4 from bin/MT4 into MQL4/Indicators. For MT5, copy the EX5 from bin/MT5 into MQL5/Indicators.
-4. Restart or refresh Navigator > Indicators and attach it to a chart.
-5. Start with default settings; optional popup, sound and push alerts are disabled initially.
+*Example MT5 chart showing a bullish sweep.*
 
-Source code is provided in MQL4/Indicators and MQL5/Indicators. See LICENSE for MIT terms and original contributor attribution.
+![Bearish liquidity-sweep chart](Screenshot_2_Bearish_Sweep.png)
 
-## Screenshots
+*Example MT5 chart showing a bearish sweep.*
 
-![Bullish sweep in MetaTrader 5](Screenshot_1_Bullish_Sweep.png)
+## Quick start
 
-![Bearish sweep in MetaTrader 5](Screenshot_2_Bearish_Sweep.png)
+1. [Download the v1.11 ZIP](https://github.com/fxliner/smart-liquidity-hunter-mt4-mt5/releases/download/v1.11/smart-liquidity-hunter-mt4-mt5-v1.11.zip).
+2. Extract it. For **MT4**, place the `.ex4` file from `bin/MT4/` in `MQL4/Indicators/`; for **MT5**, place the `.ex5` file from `bin/MT5/` in `MQL5/Indicators/`. Use **File → Open Data Folder**.
+3. Restart or refresh the Indicators section of Navigator, then attach the indicator to a chart with sufficient history.
+4. Start with default parameters; enable alerts only if required. This is an **indicator**, not an Expert Advisor.
 
-## More information
-- Developer hub and forex education: https://forexreview.top/
-- Indicator documentation: https://forexsignal24.com/smart-liquidity-hunter/
-- Official MT5 Market download: https://www.mql5.com/en/market/product/209580
-- Free MQL5 Code Base source: https://www.mql5.com/en/code/79546
-- Developer profile: https://www.mql5.com/en/users/fxliner
+## Documentation
 
-For help, open a GitHub Issue or use the MQL5 product Comments. Include symbol, timeframe, settings and a screenshot without sensitive information.
+| Guide | Contents |
+| --- | --- |
+| [Installation](docs/installation.md) | MT4/MT5 steps, files, troubleshooting |
+| [Parameters](docs/parameters.md) | Exact source input names and defaults |
+| [Methodology](docs/methodology.md) | Confirmed pivots, sweep formula, closed-bar behavior |
+| [Examples](docs/examples.md) | Illustrative bullish and bearish patterns |
+| [FAQ](docs/faq.md) | Anti-repaint limitations, alerts, setup questions |
+| [Validation](docs/validation.md) | Reproducible manual QA checklist |
 
-**Risk notice:** Price patterns and historical signals are not trade recommendations or guarantees of future outcomes.
+## Official downloads and developer resources
+
+- [GitHub Releases](https://github.com/fxliner/smart-liquidity-hunter-mt4-mt5/releases/latest) · [SourceForge](https://sourceforge.net/projects/smart-liquidity-hunter/)
+- [MQL5 Market listing](https://www.mql5.com/en/market/product/209580)
+- [MQL5 Code Base MT4](https://www.mql5.com/en/code/79545) · [MT5](https://www.mql5.com/en/code/79546)
+- [Extended tutorial — FOREXSIGNAL24](https://forexsignal24.com/smart-liquidity-hunter/)
+- [Developer hub and independent forex education — FOREXREVIEW.TOP](https://forexreview.top/)
+
+**License:** [MIT](LICENSE). For bugs, use [GitHub Issues](https://github.com/fxliner/smart-liquidity-hunter-mt4-mt5/issues/new/choose) with symbol, timeframe, terminal build and settings. Never include passwords or account identifiers.
+
+**Risk notice:** Historical candle patterns are not proof of actual institutional liquidity or a recommendation to trade. Changes to broker history or parameters can change historical output. Trading involves risk.
