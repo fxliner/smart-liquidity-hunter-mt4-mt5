@@ -50,4 +50,10 @@
 
 **License:** [MIT](LICENSE). For bugs, use [GitHub Issues](https://github.com/fxliner/smart-liquidity-hunter-mt4-mt5/issues/new/choose) with symbol, timeframe, terminal build and settings. Never include passwords or account identifiers.
 
+## Release verification and citation
+
+The [release validator](scripts/verify_distribution.py) checks the MT4/MT5 files, individual SHA-256 hashes in [SHA256SUMS.txt](SHA256SUMS.txt), and local documentation links. These hashes identify **files inside the tagged ZIP archive**, not the ZIP itself. The validator tolerates Windows-style ZIP path separators. Source and binaries in the released archive remain unchanged.
+
+Run `python3 scripts/verify_distribution.py` from a clone, or see the [automated GitHub Actions check](.github/workflows/release-integrity.yml). For installation help, see [SUPPORT.md](SUPPORT.md). For research or academic use, GitHub's **Cite this repository** option reads [CITATION.cff](CITATION.cff).
+
 **Risk notice:** Historical candle patterns are not proof of actual institutional liquidity or a recommendation to trade. Changes to broker history or parameters can change historical output. Trading involves risk.
